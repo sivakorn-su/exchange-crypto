@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enum\CurrencyType;
+use App\Http\Enum\CurrencyType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,5 +22,10 @@ class Currency extends Model
     public function wallets()
     {
         return $this->hasMany(Wallet::class);
+    }
+
+    public function exchangeRates()
+    {
+        return $this->hasOne(ExchangeRate::class);
     }
 }

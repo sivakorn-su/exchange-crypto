@@ -16,4 +16,9 @@ class ExchangeRate extends Model
     protected $casts = [
         'rate' => 'decimal:6',
     ];
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
 }
