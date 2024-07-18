@@ -15,9 +15,6 @@ class Currency extends Model
         'symbol',
         'type',
     ];
-    protected $casts = [
-        'type' => CurrencyType::class,
-    ];
 
     public function wallets()
     {
@@ -27,5 +24,13 @@ class Currency extends Model
     public function exchangeRates()
     {
         return $this->hasOne(ExchangeRate::class);
+    }
+
+    protected function casts(): array
+    {
+        return
+            [
+                'type' => CurrencyType::class,
+            ];
     }
 }

@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('symbol', 5);
-            $table->tinyInteger('type');
+            $table->unsignedTinyInteger('type');
             $table->timestamps();
         });
     }

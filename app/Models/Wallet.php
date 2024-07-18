@@ -12,11 +12,7 @@ class Wallet extends Model
     protected $fillable = [
         'user_id',
         'balance',
-        'status',
         'currency_id',
-    ];
-    protected $casts = [
-        'balance' => 'decimal:6',
     ];
 
     public function user()
@@ -28,5 +24,6 @@ class Wallet extends Model
     {
         return $this->belongsTo(Currency::class);
     }
+
 }
 

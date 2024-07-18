@@ -16,8 +16,13 @@ class CryptoDeposit extends Model
         'currency_id',
         'status',
     ];
-    protected $casts = [
-        'amount' => 'decimal:8',
-        'status' => CryptoDepositStatus::class,
-    ];
+
+    protected function casts(): array
+    {
+        return
+            [
+                'amount' => 'decimal:8',
+                'status' => CryptoDepositStatus::class,
+            ];
+    }
 }

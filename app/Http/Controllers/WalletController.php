@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 class WalletController extends Controller
 {
-
     public function me()
     {
-        $user = auth()->user();
-        $wallets = $user->wallets()->with('currency')->get();
-        return response()->json($wallets);
+        return response()->json([
+            'wallet' => auth()->user()->wallets,
+        ]);
     }
-
 }

@@ -22,7 +22,6 @@ class AuthController extends Controller
                 'token' => Auth::user()->createToken('API Token')->plainTextToken
             ]);
         }
-
         throw ValidationException::withMessages([
             'email' => ['The provided credentials are incorrect.'],
         ]);

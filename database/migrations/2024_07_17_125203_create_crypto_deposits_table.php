@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->foreignId('currency_id')->constrained('currencies');
             $table->DECIMAL('amount', 18, 8);
             $table->DECIMAL('price', 18, 8);
-            $table->tinyInteger('status');
+            $table->unsignedTinyInteger('status');
             $table->timestamps();
         });
     }

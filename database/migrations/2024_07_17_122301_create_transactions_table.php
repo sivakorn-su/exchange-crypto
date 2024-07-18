@@ -13,11 +13,9 @@ return new class extends Migration {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('depositor_id')->constrained('wallets');
-            $table->foreignId('recipient_id')->constrained('wallets');
+            $table->foreignId('recipient_id')->nullable()->constrained('wallets');
             $table->foreignId('currency_id')->constrained('currencies');
             $table->DECIMAL('amount', 18, 8);
-            $table->tinyInteger('type');
-            $table->tinyInteger('status');
             $table->timestamps();
         });
     }

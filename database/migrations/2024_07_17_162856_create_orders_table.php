@@ -12,13 +12,9 @@ return new class extends Migration {
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('currencies_id')->constrained('currencies');
-            $table->tinyInteger('order_type');
-            $table->DECIMAL('amount', 18, 8);
-            $table->DECIMAL('price', 18, 8);
-            $table->tinyInteger('status');
+            $table->foreignId('wallet_id')->constrained('wallets')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

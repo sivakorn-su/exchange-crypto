@@ -13,7 +13,10 @@ return new class extends Migration {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transaction_id')->constrained('transactions');
-
+            $table->unsignedTinyInteger('type');
+            $table->unsignedTinyInteger('bankType')->nullable();
+            $table->unsignedTinyInteger('status');
+            $table->string('to_address')->nullable();
             $table->timestamps();
         });
     }
