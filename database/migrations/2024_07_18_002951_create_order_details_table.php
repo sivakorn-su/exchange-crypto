@@ -15,9 +15,9 @@ return new class extends Migration {
             $table->foreignId('order_id')->constrained('orders')->cascadeOnDelete();
             $table->foreignId('from_currency_id')->constrained('currencies');
             $table->foreignId('to_currency_id')->constrained('currencies');
-            $table->smallInteger('amount');
-            $table->smallInteger('rate');
-            $table->smallInteger('total');
+            $table->decimal('amount', 18, 8);
+            $table->decimal('rate', 18, 8);
+            $table->decimal('total', 18, 8);
             $table->unsignedTinyInteger('order_type');
             $table->unsignedTinyInteger('status');
             $table->timestamps();

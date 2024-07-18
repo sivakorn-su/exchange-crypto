@@ -19,6 +19,6 @@ class ExchangeRate extends Model
 
     public function currency()
     {
-        return $this->belongsTo(Currency::class);
+        return $this->hasMany(Currency::class);
     }
 }

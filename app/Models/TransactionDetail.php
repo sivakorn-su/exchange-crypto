@@ -22,7 +22,7 @@ class TransactionDetail extends Model
 
     public function detail()
     {
-        return $this->belongsTo(Transaction::class);
+        return $this->hasOne(Transaction::class);
     }
 
     protected function casts(): array

@@ -24,17 +24,17 @@ class OrderDetail extends Model
 
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->hasOne(Order::class);
     }
 
     public function fromCurrency()
     {
-        return $this->belongsTo(Currency::class, 'from_currency_id');
+        return $this->hasMany(Currency::class, 'from_currency_id');
     }
 
     public function toCurrency()
     {
-        return $this->belongsTo(Currency::class, 'to_currency_id');
+        return $this->hasMany(Currency::class, 'to_currency_id');
     }
 
     protected function casts(): array

@@ -21,8 +21,13 @@ class Transaction extends Model
         return $this->belongsTo(Wallet::class, 'depositor_id');
     }
 
-    public function detail()
+    public function recipient()
     {
         return $this->belongsTo(Wallet::class, 'recipient_id');
+    }
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
     }
 }
