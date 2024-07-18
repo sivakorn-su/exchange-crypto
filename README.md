@@ -1,5 +1,7 @@
 1. Clone project
-2. Create .env file by copy content from .env.example `cp .env.example .env`
+2. Create .env file by copy content from .env.example `cp .env.example .env` and get api key
+   from [coingecko](https://www.coingecko.com/) and
+   [exchangerate-api](https://www.exchangerate-api.com/) set your api key in .env or use default
 3. Create Database named **Exchange** (MySQL 8), update `DB_USERNAME`, `DB_PASSWORD` in .env
 4. Run `composer install`
 5. Run `php artisan migrate:fresh --seed
